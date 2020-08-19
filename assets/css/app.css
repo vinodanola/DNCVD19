@@ -1,5 +1,15 @@
 .skin-black .main-header .navbar-brand {
-  background: red;
+  background: #005384;
   color: #fff; }
+
+#myTableListNasabahPerKelompok tbody th, #myTableListNasabahPerKelompok tbody td {
+  padding: 2px 5px !important; }
+
+#myModalUploadForm .modal-dialog, #myModalUploadFormLunas .modal-dialog {
+  width: 900px;
+  margin: 30px auto; }
+
+#contentWrapperDahsboard .info-box .info-box-content {
+  margin-left: 0; }
 
 /*# sourceMappingURL=app.css.map */

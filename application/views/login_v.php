@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="login-box">
                     <div class="login-logo">
-                        <a href="#"><b>Subsidi Bunga</b></a>
+                        <a href="#"><b>Bansos</b></a>
                     </div>
                     <?php if ($signin == 'failed') { ?>
                     <div class="alert alert-danger">
@@ -13,7 +13,7 @@
                     <?php }?>
                     <!-- /.login-logo -->
                     <div class="login-box-body">
-                      <p class="login-box-msg">Sign in to start your session</p>
+                      <p class="login-box-msg">Masuk menggunakan akun Mekaar Integrasi</p>
 
                       <form action="<?= base_url().'welcome/signin'; ?>" method="post">
                         <div class="form-group has-feedback">

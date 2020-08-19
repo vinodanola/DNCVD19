@@ -5,12 +5,31 @@ class Welcome extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('welcome_m');
+        $this->load->model('Welcome_m');
         $this->load->helper('url');
         date_default_timezone_set("Asia/Jakarta");
     }
 
     public function index()
+    {
+        $data_signin = [
+            'signin' => $this->input->get('sign_in'),
+            'cabang' => $this->Welcome_m->GET_CABANG(),
+            'tanggalrealisasi' => $this->Welcome_m->GET_TANGGAL_REALISASI()
+        ];
+        
+        $this->load->view('head_v');
+        
+        if ($this->session->signin){
+            $this->load->view('navbar_v');
+            $this->load->view('welcome_v',$data_signin);
+        } else {
+            $this->load->view('login_v',$data_signin);
+        }
+        $this->load->view('footer_v');
+    }
+    
+    public function index_bansos()
     {
         $data_signin = [
             'signin' => $this->input->get('sign_in')
@@ -20,7 +39,7 @@ class Welcome extends CI_Controller {
         
         if ($this->session->signin){
             $this->load->view('navbar_v');
-            $this->load->view('welcome_v');
+            $this->load->view('welcomebansos_v',$data_signin);
         } else {
             $this->load->view('login_v',$data_signin);
         }
@@ -41,7 +60,7 @@ class Welcome extends CI_Controller {
         
         if (count($Q)==1) {
             $this->session->set_userdata('signin',[
-                'MENU'      => ['M1'],
+                'MENU'      => ['M2'],
                 'ID'        => $Q[0]['id'],
                 'USERNAME'  => $Q[0]['username'], 
                 'SDM_ID'    => $Q[0]['sdm_id'],
@@ -58,6 +77,38 @@ class Welcome extends CI_Controller {
     public function signout(){
         $this->session->sess_destroy();
         redirect(base_url(), 'refresh');
+    }
+    
+    public function get_dashboard_data_api(){
+        
+        $R = [
+            'status' => false,
+            'message' => 'Failed',
+            'data' => []
+        ];
+
+        $bulan = $this->input->get('bulan');
+        $tahun = $this->input->get('tahun');
+        $cabang = $this->input->get('cabang');
+        $wdate = $this->input->get('wdate');
+
+        $d = [
+            'periode' => $tahun.$bulan,
+            'cabang' => $cabang,
+            'wdate' => $wdate
+        ];
+
+        $Q = $this->Welcome_m->GET_DASHBOARD_DATA($d);
+
+        if ($Q)
+        {
+          $R['status'] = true;
+          $R['message'] = 'Data loaded';
+          $R['data'] = $Q;
+        }
+
+        echo json_encode($R);
+        
     }
     
 }

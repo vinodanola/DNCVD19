@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Subsidi Bunga</title>
+    <title>App</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="<?php echo base_url('assets/AdminLTE-2.4.0-rc/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/AdminLTE-2.4.0-rc/bower_components/font-awesome/css/font-awesome.min.css') ?>">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/AdminLTE-2.4.0-rc/dist/css/AdminLTE.min.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/AdminLTE-2.4.0-rc/dist/css/skins/_all-skins.min.css') ?>">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/app.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/app.css?id=') . date(DATE_RFC2822) ?>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     
     <script src="<?php echo base_url('assets/AdminLTE-2.4.0-rc/bower_components/jquery/dist/jquery.min.js') ?>"></script>
@@ -53,6 +53,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+    
+    <script src="<?php echo base_url('assets/bootbox/bootbox.all.js') ?>"></script>
+    <script src="<?php echo base_url('assets/jquery.mask.min.js') ?>"></script>
+    
     
     <script src="<?php echo base_url('assets/js/app.js?id=') . date(DATE_RFC2822) ?>"></script>
 </head>

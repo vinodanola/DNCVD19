@@ -1,8 +1,31 @@
 .skin-black {
     .main-header {
         .navbar-brand {
-            background: red;
+            background: #005384;
             color: #fff;
         }
     } 
 }
+
+#myTableListNasabahPerKelompok {
+    tbody th, tbody td {
+        padding: 2px 5px !important;
+    }
+}
+
+
+#myModalUploadForm, #myModalUploadFormLunas {
+    .modal-dialog {
+        width: 900px;
+        margin: 30px auto;
+    }
+}
+
+#contentWrapperDahsboard {
+    .info-box {
+        .info-box-content {
+            margin-left: 0;
+        }    
+    }
+}
+

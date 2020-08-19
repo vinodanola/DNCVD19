@@ -6,8 +6,13 @@
                     <div class="panel-heading">
                         <div class="row">
                             <form >
-                                <div class="col-md-6">
-                                    <h4>Daftar Kelompok</h4>
+                                <div class="col-md-12">
+                                    <h4>Daftar Kelompok Nasabah Belum Lunas</h4>
+                                    <p>
+                                        <span >
+                                            Penyaluran subsidi bunga nasabah belum lunas <b>per kelompok</b>. Silahkan pilih kelompok yang akan disalurkan subsidi bunga.
+                                        </span>
+                                    </p>
                                 </div>
                             </form>
                         </div>
@@ -23,11 +28,13 @@
                                 <th>cabang</th>
                                 <th>kelompok id</th>
                                 <th>kelompok</th>
-                                <th>status pencairan</th>
+                                <th>periode (yyyymm)</th>
+                                <th>status realisasi</th>
                                 <th></th>
                             </thead>
                             <tfoot>
                                 <tr>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -48,3 +55,4 @@
     </section>
 </div>
 <?php require_once 'modals/modal_upload_form_v.php'; ?>
+<?php require_once 'modals/modal_detail_realisasi_v.php'; ?>

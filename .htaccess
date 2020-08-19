@@ -1,7 +1,7 @@
 RewriteEngine On
-RewriteBase /SubsidiBunga/
+RewriteBase /DNCVD19/
 
-RewriteCond %{THE_REQUEST} /SubsidiBunga/index\.php\??([^\ ]*)
+RewriteCond %{THE_REQUEST} /DNCVD19/index\.php\??([^\ ]*)
 RewriteRule ^ %1? [L,R]
 
 RewriteCond %{REQUEST_FILENAME} !-f
